@@ -1,0 +1,32 @@
+<div id="whiteProcess_edit_dialog">
+<form id="whiteProcess_edit"  class="mws-form" >
+    {% csrf_token %}
+        <div id="edit-blackIp-error" class="mws-form-message error" style="display:none;"></div>
+        <div class="mws-form-inline">
+            <div class="mws-form-row">
+                <label class="mws-form-label">进程名</label>
+                <div class="mws-form-item large">
+                    <input type="text" id='edit_processname' name='processname' />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">进程MD5</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='md5' id='editmd5'/>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">详细描述</label>
+                <div class="mws-form-item large">
+                    <textarea id='editdescription' name='description' rows="100%" cols="100%"></textarea>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">版本</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='version' id='editversion'/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

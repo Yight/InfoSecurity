@@ -1,0 +1,1 @@
+protoc -IPATH=/home/wanghao/spyclient/CollectServer/ --python_out=. --proto_path=. ProtoMessage.proto 

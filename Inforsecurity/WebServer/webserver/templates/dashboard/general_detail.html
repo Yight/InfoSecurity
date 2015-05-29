@@ -1,0 +1,81 @@
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+    <style type="text/css">
+        .dynamicguagediv
+        {
+            vertical-align: top;
+            margin: 5px 1% 13px 1%;
+            text-decoration: none;
+            color: #323232;
+            border: 1px solid #CCC;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            float:left;
+        }
+    </style>
+{% endblock %}
+{% block maincontainer %}  
+        	<!-- Inner Container Start -   ->
+<!--        	{% for id,value,text in urltypes %}-->
+<!--                <input type="checkbox" name='urltypes' value="{{value}}" id="{{id}}" /><label for="{{id}}">{{text}}</label>-->
+<!--            {% endfor %}-->
+            <div class="container1">
+
+            	<div class="mws-panel grid_8">
+                    
+                	<div class="mws-panel-header">
+                    	<span><i class="icon-magic"></i> </span>
+                    </div>
+                    {% if success %}
+                    <div id='success' class="mws-form-message success">
+                        没有数据!!
+                    </div>
+                    {% endif %}
+                    <div class="mws-panel-body no-padding">
+                    <input type="hidden" id="arraynum" value={{data|length}}>
+                        <div id="north">
+                            {% for i in data %}
+                                <div id="{{i.1}}" style="width: 240px; height: 240px; margin: 5 auto" class = 'dynamicguagediv'></div>
+                            {% endfor %}
+                        </div>
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                    <div class="mws-panel-header">
+                    	<span><i class="icon-magic"></i> </span>
+                    </div>
+                    {% if success %}
+                    <div id='success' class="mws-form-message success">
+                        没有数据!!
+                    </div>
+                    {% endif %}
+                    <div class="mws-panel-body no-padding">
+                        <div id="south">
+                            {% for i in data %}
+                                <ul class="mws-summary clearfix" style="border: 1px,0,1px,0; background-color:#bbb">
+                                    <li>
+                                        <span class=""><i class="icon-windows"></i> 机器编号：{{i.1}}</span>
+                                    </li>
+                                </ul>
+                                    <input type="hidden" id="tempindex{{forloop.counter0}}" value={{i.1}}>
+                                    <div id="{{i.1}}tb" style="width: 500px; height: 300px; margin: 5 auto" class = 'dynamicguagediv'></div>
+                                    <div id="{{i.1}}tbdt"" style="width: 500px; height: 300px; margin: 5 auto" class = 'dynamicguagediv'></div>
+                                    <div style="clear:both">
+                            {% endfor %}
+                        <div style="clear:both">
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+{% endblock %}
+
+{% block extrascripts %}
+    <script type="text/javascript" src="/static/js/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/static/js/highstock/highstock.js"></script>
+    <script type="text/javascript" src="/static/js/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/dashboard/dashboard_detail.js"></script>
+{% endblock %}

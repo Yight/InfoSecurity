@@ -1,0 +1,36 @@
+<div id="blackIp_add_dialog">
+<form id="blackIp_add" method="post" class="mws-form" action='/management/blackIP/'>
+    {% csrf_token %}
+        <div id="add-blackIp-error" class="mws-form-message error" style="display:none;"></div>
+        <div class="mws-form-inline">
+            <div class="mws-form-row">
+                <label class="mws-form-label">邮件类型</label>
+                <div class="mws-form-item large">
+                    <div id='blackIp_type_add'>
+                        {% for id,value,text in iptypes %}
+                        <input type="radio" name='blackiptype' value="{{value}}" id="add{{id}}" /><label for="add{{id}}">{{text}}</label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">IP地址</label>
+                <div class="mws-form-item large">
+                    <input type="text" id='add_blackIp' name='blackip' />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">风险值</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='riskvalue' id='addriskvalue'/>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">详细描述</label>
+                <div class="mws-form-item large">
+                    <textarea id='adddescription' name='description' rows="100%" cols="100%"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

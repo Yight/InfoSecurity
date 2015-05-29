@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+
+{% include "include.html" %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/css/register/register.css" media="screen" />
+{% endblock %}
+<body>
+    <!-- Start Main Wrapper -->
+    <div id="mws-wrapper">
+        <!-- Main Container Start -->
+        	<!-- Inner Container Start -->
+            <div class="container1">
+
+            	<div class="mws-panel grid_8 regiser_cloumn">
+                	<div class="mws-panel-header">
+                    	<span><i class="icon-magic"></i>用户注册</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                        <div id="container" >
+                            <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div> 
+                            <div class="mws-form-inline">
+                                <div class="mws-form-row">
+                                    <h1>你已注册成功!</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Panels End -->
+            <!-- Inner Container End -->
+                       
+            
+        </div>
+        <!-- Main Container End -->
+        
+    </div>
+    
+    {% include "footer.html" %}
+    <script type="text/javascript" src="/static/plugins/jCombo/jquery.jCombo.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/register/register.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/register/infosecurity.jCombo.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.validate.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+{% extends "base_generic.html" %}
+
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+{% endblock %}
+{% block maincontainer %}
+            <div id="tip" style="background:#333338;
+            font-size:16px;
+            color:#c6d62b; 
+            padding:4px;
+            border-width: 1px;
+            border-style: solid;
+            -moz-border-radius: 11px;
+            -khtml-border-radius: 11px;
+            -webkit-border-radius: 11px;
+            border-radius: 11px;
+            position:absolute;
+            visibility:hidden;
+            word-wrap:break-word;
+            z-index:999"></div>
+
+            <!-- Inner Container Start -->
+            <div class="container">
+            <!-- Panels Start -->
+                
+                <div class="mws-panel grid_5">
+                    <div class="mws-panel-header">
+                        <span><i class="icon-graph"></i>报警图表</span>
+                    </div>
+                    <div class="mws-panel-body">
+                        <div id="containerchart" style="height: 222px"></div>
+                    </div>
+                </div>
+                
+                <div class="mws-panel grid_3">
+                    <div class="mws-panel-header">
+                        <span><i class="icon-book"></i>系统信息总结</span>
+                    </div>
+                    <input type='hidden'  id='userid' value='{{ userid }}' />
+                    <div class="mws-panel-body no-padding">
+                        <ul class="mws-summary clearfix">
+                            <li style="height: 44px">
+                                <span class="key"><i class="icon-official"></i> 上次登录ip </span>
+                                <span class="val">
+                                    <span class="text-nowrap"> {{ last_login.userip }} </span>
+                                </span>
+                            </li>
+                            <li style="height: 44px">
+                                <span class="key"><i class="icon-time"></i> 上次登录时间 </span>
+                                <span class="val">
+                                    <span class="text-nowrap"> {{ last_login.logintime }} </span>
+                                </span>
+                            </li>
+                            <li style="height: 44px">
+                                <span class="key"><i class="icon-install"></i> 本周ip攻击次数 </span>
+                                <span class="val">
+                                    <span class="text-nowrap"> {{ total_ip }} </span>
+                                </span>
+                            </li>
+                            <li style="height: 44px">
+                                <span class="key"><i class="icon-envelope"></i> 本周email攻击次数 </span>
+                                <span class="val">
+                                    <span class="text-nowrap"> {{ total_email }} </span>
+                                </span>
+                            </li>
+                            <li style="height: 44px">
+                                <span class="key"><i class="icon-IE"></i> 本周url攻击次数 </span>
+                                <span class="val">
+                                    <span class="text-nowrap">{{ total_url }}</span>
+                                </span>
+                            </li>
+                            <li style="height: 45px">
+                                <span class="key"><i class="icon-download"></i> 客户端证书下载 </span>
+
+                                <span class="val">
+                                    <a href='/static/CA/{{ userid }}/setup.zip' class='btn' id='download'  style='width:70px;margin-right:80px;'><i class=''></i>证书下载</a>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div  class="mws-panel grid_8" style="margin-bottom:0px">
+                    <div id='info'>
+                    </div>
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i>报警名单</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+
+                        <table class="mws-datatable-fn mws-table" name="alarm_list" id="alarm_list" style="text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>编号</th>
+                                    <th>用户</th>
+                                    <th>风险值</th>
+                                    <th>报警数据</th>
+                                    <th>是否报警</th>
+                                    <th>添加时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <!-- Panels End -->
+            <!-- Inner Container End -->
+                       
+            <!-- Footer -->
+            <div id="mws-footer">
+                Copyright Your Website 2012. All Rights Reserved.
+            </div>
+{% endblock %}
+{% block extrascripts %}
+<!--<script type="text/javascript" src="/static/js/themes/gray.js"></script>-->
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.table.js"></script>
+<!--<script type="text/javascript" src="/static/js/highcharts/highcharts.js"></script>-->
+    <script type="text/javascript" src="/static/js/highstock/highstock.js"></script>
+<script type="text/javascript" src="/static/js/highcharts/highcharts-more.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/accounts/userhomepage.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/accounts/user_certificate.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/accounts/alarm_list.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/TableTools.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/ZeroClipboard.js"></script>
+{% endblock %}

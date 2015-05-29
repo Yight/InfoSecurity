@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+
+{% include "include.html" %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/css/email_search/email_search.css" media="screen" /> 
+    <link rel="stylesheet" type="text/css" href="/static/css/email/email.css" media="screen" /> 
+    <style type="text/css">
+        .usr-label{
+            padding-top: 7px; 
+            display：inblock;
+            float:left; 
+        }
+    
+    </style>
+{% endblock %}
+<body>
+
+    {% include "header.html" %}
+    <!-- Start Main Wrapper -->
+    <div id="mws-wrapper">
+    
+        {% include "leftmenu.html" %}
+        <!-- Main Container Start -->
+        <div id="mws-container" class="clearfix">
+            <br/>
+        	<!-- Inner Container Start -->
+            <div class="container">
+               
+            	<div class="mws-panel grid_8" style="margin-bottom:0px">
+                	<div class="mws-panel-header">
+                    	<span><i class="icon-magic"></i> 风险值管理</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                    <form class="mws-form" method="post" action="/test/">
+                        {% csrf_token %}
+                            <div class="mws-form-inline">
+                            
+                            	<div class="mws-form-row">
+                                	<label class="mws-form-label" style="padding-top: 7px; width:140px;">邮箱风险值：</label>
+                                	<div style="float:left;">
+                                    	<input type="text" id = "email_check" style="width：150px；"onKeyUp="value=value.replace(/\D+/g,'')" name="emailvalue"/>
+                                    </div>
+                                    <label class="mws-form-label usr-label">报警方式：</label>
+                    				<ul class="mws-form-list inline"  style="width:300px; float:left;"  >
+                    					<li><input type="checkbox" /> <label>短信</label></li>
+                    					<li><input type="checkbox" /> <label>邮件</label></li>
+                    				</ul>
+                                </div>
+                            	
+                            	<div class="mws-form-row">
+                                	<label class="mws-form-label" style="padding-top: 7px; width:140px;">IP风险值：</label>
+                                	<div style="float:left;">
+                                    	<input type="text" id="IP_check" style="width：150px；"onKeyUp="value=value.replace(/\D+/g,'')"/>
+                                    </div>
+                                    <label class="mws-form-label usr-label" >报警方式：</label>
+                    				<ul class="mws-form-list inline"  style="width:300px; float:left;"  >
+                    					<li><input type="checkbox" /> <label>短信</label></li>
+                    					<li><input type="checkbox" /> <label>邮件</label></li>
+                    				</ul>
+                                </div>
+                                <div class="mws-form-row">
+                                	<label class="mws-form-label" style="padding-top: 7px; width:140px;">URL风险值：</label>
+                                	<div style="float:left;">
+                                    	<input type="text" id= "URL_check"style="width：150px；"onKeyUp="value=value.replace(/\D+/g,'')"/>
+                                    </div>
+                                    <label class="mws-form-label usr-label" >报警方式：</label>
+                    				<ul class="mws-form-list inline"  style="width:300px; float:left;"  >
+                    					<li><input type="checkbox" /> <label>短信</label></li>
+                    					<li><input type="checkbox" /> <label>邮件</label></li>
+                    				</ul>
+                                </div>
+                             </div>
+                            <div class="mws-button-row">
+                                <input type="submit" value="提交" class="btn btn-danger" />
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+               
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+                       
+            <!-- Footer -->
+            <div id="mws-footer">
+            	Copyright Your Website 2012. All Rights Reserved.
+            </div>
+            
+        </div>
+        <!-- Main Container End -->
+        
+    </div>
+    
+    {% include "footer.html" %}
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.table.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.widget.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.validate.js"></script>
+</body>
+</html>

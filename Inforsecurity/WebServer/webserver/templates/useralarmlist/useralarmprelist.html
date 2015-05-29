@@ -1,0 +1,71 @@
+{% extends "base_generic.html" %}
+
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+{% endblock %}
+{% block maincontainer %}
+            <div id="tip" style="background:#333338;
+            font-size:16px;
+            color:#c6d62b; 
+            padding:4px;
+            border-width: 1px;
+            border-style: solid;
+            -moz-border-radius: 11px;
+            -khtml-border-radius: 11px;
+            -webkit-border-radius: 11px;
+            border-radius: 11px;
+            position:absolute;
+            visibility:hidden;
+            word-wrap:break-word;
+            z-index:999"></div>
+
+            <!-- Inner Container Start -->
+            <div class="container">
+            <!-- Panels Start -->
+                
+                <div  class="mws-panel grid_8" style="margin-bottom:0px">
+                    <div id='info'>
+                    </div>
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i>预警名单</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+
+                        <table class="mws-datatable-fn mws-table" name="alarm_list" id="alarm_list" style="text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>编号</th>
+                                    <th>预警内容</th>
+                                    <th>预警类型</th>
+                                    <th>是否预警</th>
+                                    <th>添加时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <!-- Panels End -->
+            <!-- Inner Container End -->
+                       
+            <!-- Footer -->
+            <div id="mws-footer">
+                Copyright Your Website 2012. All Rights Reserved.
+            </div>
+{% endblock %}
+{% block extrascripts %}
+<!--<script type="text/javascript" src="/static/js/themes/gray.js"></script>-->
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.table.js"></script>
+<!--<script type="text/javascript" src="/static/js/highcharts/highcharts.js"></script>-->
+    <script type="text/javascript" src="/static/js/highstock/highstock.js"></script>
+<script type="text/javascript" src="/static/js/highcharts/highcharts-more.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/useralarmlist/user_alarmpre_list.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/TableTools.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/ZeroClipboard.js"></script>
+{% endblock %}

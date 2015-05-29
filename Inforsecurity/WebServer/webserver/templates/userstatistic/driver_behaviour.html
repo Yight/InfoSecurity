@@ -1,0 +1,79 @@
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+{% endblock %}
+{% block maincontainer %}
+            <br/>
+            <div id="tip" style="background:#333338;
+            font-size:16px;
+            color:#c6d62b; 
+            padding:4px;
+            border-width: 1px;
+            border-style: solid;
+            -moz-border-radius: 11px;
+            -khtml-border-radius: 11px;
+            -webkit-border-radius: 11px;
+            border-radius: 11px;
+            position:absolute;
+            visibility:hidden;
+            word-wrap:break-word;
+            z-index:999"></div>
+            <!-- Inner Container Start -->
+            <div class="container">
+                <div  class="mws-panel grid_8" style="margin-bottom:0px">
+                    {% if add_success %}
+                        {% if add %}
+                        <div id='success' class="mws-form-message success">
+                            您已经添加成功!
+                        </div>
+                        {% else %}
+                        <div id='error' class="mws-form-message error">
+                            您已添加过此项数据,请查看黑名单管理！
+                        </div>
+                        {% endif %}
+                    {% endif %}
+                    <div id='info'>
+                    </div>
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i>驱动事件统计</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+
+                        <table class="mws-datatable-fn mws-table" name="driver_behaviour" id="driver_behaviour" style="text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>编号</th>
+                                    <th>添加用户</th>
+                                    <th>驱动</th>
+                                    <th>类型</th>
+                                    <th>程序</th>
+                                    <th>流向</th>
+                                    <th>联系号码</th>
+                                    <th>内容</th>
+                                    <th>发生时间</th>
+                                    <th>风险值</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+               {% include "userstatistic/driver_search_widget.html" %}
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+            {% endblock %}
+            
+{% block extrascripts %}
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.table.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/userstatistic/driver.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.widget.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.validate.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/TableTools.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/ZeroClipboard.js"></script>
+{% endblock %}

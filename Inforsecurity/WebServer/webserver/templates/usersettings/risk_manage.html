@@ -1,0 +1,92 @@
+﻿
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+<link rel="stylesheet" type="text/css" href="/static/css/email/email.css" media="screen" /> 
+<style type="text/css">
+    .usr-label{
+        padding-top: 7px; 
+        display：inblock;
+        float:left; 
+}
+    
+</style>
+{% endblock %}
+
+{% block maincontainer %}
+
+            
+        	<!-- Inner Container Start -->
+            <div class="container">
+               
+            	<div class="mws-panel grid_8" style="margin-bottom:0px">
+            	    <div id='errors' class="mws-form-message error" style="display:none;">
+                    </div>
+                    {% if success %}
+                    <div id='success' class="mws-form-message success">
+                        修改成功!!
+                    </div>
+                    {% endif %}
+                	<div class="mws-panel-header">
+                    	<span><i class="icon-magic"></i> 风险值管理</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                    <form class="mws-form" method="post" action="/usersettings/risk_manage_post/">
+                        {% csrf_token %}
+                            <div class="mws-form-inline">
+                            	<div class="mws-form-row">
+                            	
+                                	<label class="mws-form-label" style="padding-top: 7px; width:140px;">邮箱风险值：</label>
+                                	<div style="float:left;">
+                                    	<input type="text" id = "email_check" name="email_risk" style="width：150px；" onKeyUp="value=value.replace(/\D+/g,'')" value="{{userinfo.emailalarmvalue}}" />
+                                    </div>
+                                    <label class="mws-form-label usr-label">报警方式：</label>
+                    				<ul class="mws-form-list inline"  style="width:300px; float:left;"  >
+                    					<li><input type="checkbox" name = "email_type_sms" {%if emailsms %} checked {%endif%} /> 短信</li>
+                    					<li><input type="checkbox" name = "email_type_email" {%if emailemail %} checked {%endif%}   value="email"/> 邮件</li>
+                    				</ul>
+                                </div>
+                            	
+                            	<div class="mws-form-row">
+                                	<label class="mws-form-label" style="padding-top: 7px; width:140px;">IP风险值：</label>
+                                	<div style="float:left;">
+                                    	<input type="text" id="ip_check" name="ip_risk" style="width：150px；" value={{userinfo.ipalarmvalue}}  onKeyUp="value=value.replace(/\D+/g,'')"/>
+                                    </div>
+                                    <label class="mws-form-label usr-label" >报警方式：</label>
+                    				<ul class="mws-form-list inline"  style="width:300px; float:left;"  >
+                    					<li><input type="checkbox" name = "ip_type_sms" {%if ipsms %} checked {%endif%} /> <label>短信</label></li>
+                    					<li><input type="checkbox" name = "ip_type_email" {%if ipemail %} checked {%endif%}/> <label>邮件</label></li>
+                    				</ul>
+                                </div>
+                                <div class="mws-form-row">
+                                	<label class="mws-form-label" style="padding-top: 7px; width:140px;">URL风险值：</label>
+                                	<div style="float:left;">
+                                    	<input type="text" id= "url_check" name="url_risk" style="width：150px；" value={{userinfo.urlalarmvalue}} onKeyUp="value=value.replace(/\D+/g,'')"/>
+                                    </div>
+                                    <label class="mws-form-label usr-label" >报警方式：</label>
+                    				<ul class="mws-form-list inline"  style="width:300px; float:left;"  >
+                    					<li><input type="checkbox" name = "url_type_sms" {%if urlsms %} checked {%endif%} /> <label>短信</label></li>
+                    					<li><input type="checkbox" name = "url_type_email" {%if urlemail %} checked {%endif%} /> <label>邮件</label></li>
+                    				</ul>
+                                </div>
+                             </div>
+                            <div class="mws-button-row">
+                                <input type="submit" value="提交" id="settingsubmit" class="btn btn-danger" />
+                            </div>
+                        </form>
+                    
+                    </div>
+                </div>
+               
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+                       
+            <!-- Footer -->
+            <div id="mws-footer">
+            	Copyright Your Website 2012. All Rights Reserved.
+            </div>
+            <script type="text/javascript" src="/static/js/libs/jquery-1.8.2.min.js"></script>
+            <script type="text/javascript" src="/static/js/infosecurity/usermanage/riskmanage.js"></script>
+        <!-- Main Container End -->
+{% endblock %}

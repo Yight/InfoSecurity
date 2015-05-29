@@ -1,0 +1,2 @@
+REG DELETE HKCU\SOFTWARE\MoniClient
+

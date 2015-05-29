@@ -1,0 +1,26 @@
+{
+    "sEcho": {{sEcho}},
+    "iTotalRecords": {{iTotalRecords}},
+    "iTotalDisplayRecords": {{iTotalDisplayRecords}},
+    "aaData":[
+        {% for resemail in querySet %}
+            [
+                "{{resemail.id}}",
+                "{{resemail.datetime}}",
+                "{{resemail.sender}}",
+                "{{resemail.receiver}}",
+                "{{resemail.sip}}",
+                "{{resemail.dip}}",
+                "{{resemail.emailtype}}",
+                "{{resemail.riskvalue}}",
+                "{{resemail.alarm}}",
+                "{{resemail.subject}}",
+                "{{resemail.sport}}",
+                "{{resemail.dport}}"
+            ]
+            {% if not forloop.last %}
+                ,
+            {% endif %}
+        {% endfor %}
+    ]
+}

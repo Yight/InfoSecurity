@@ -1,0 +1,15 @@
+
+<div id="white_ip_add_dialog">
+<form id="white_ip_add" method="post" class="mws-form" action='/usersettings/white_ip/'>
+    {% csrf_token %}
+        <div id="add-white_ip-error" class="mws-form-message error" style="display:none;"></div>
+        <div class="mws-form-inline">
+            <div class="mws-form-row">
+                <label class="mws-form-label">请输入IP地址</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='white_ip' id='white_ip'/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

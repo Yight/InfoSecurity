@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+#receiver_detail_ip{
+    color:#333;
+    margin: 2px 0;
+    display: block;
+    text-align: left;
+}
+
+.little_padding{
+    padding:1px;
+}

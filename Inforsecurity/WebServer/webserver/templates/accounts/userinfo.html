@@ -1,0 +1,188 @@
+
+{% extends "base_generic.html" %}
+
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+{% endblock %}
+{% block maincontainer %}
+
+            <div class="container1">
+                <div class="mws-panel grid_8 regiser_cloumn">
+                    {% if fail %}
+                        <div id='error' class="mws-form-message error">
+                            {{changeinfo}}
+                        </div>
+                    {% endif %}
+                    {% if success %}
+                        <div id='success' class="mws-form-message success">
+                            {{changeinfo}}
+                        </div>
+                    {% endif %}
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i>用户信息</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                        <div id="container" >
+                            <form class="mws-form wzd-default" enctype="multipart/form-data" id='register-form' action='/accounts/changeinfo/' method='post' >
+                                {% csrf_token %}
+                                <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div> 
+                                <div class="mws-form-inline">
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">用户名<span class="required">*</span></label>
+                                        <div class="mws-form-item large">
+                                            <input type="text" name="username" id='username' value="{{username}}" readonly='readonly' />
+                                        </div>
+                                    </div>
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">真实姓名<span class="required">*</span></label>
+                                        <div class="mws-form-item large">
+                                            <input type="text" name="realname" id='realname' value="{{realname}}" readonly='readonly' />
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">邮件地址<span class="required">*</span></label>
+                                        <div class="mws-form-item large">
+                                            <input type="text" name="email" id='email' value="{{email}}" {% if form.email.errors %} class="error" {% endif %}/>
+                                            <div class="error-messages">
+                                                {% if form.email.errors %}
+                                                    <label for="email" generated="true" class="error" style="">{{form.email.errors}}</label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">手机号码<span class="required">*</span></label>
+                                        <div class="mws-form-item large">
+                                            <input type="text" name="mobile" id='mobile' value="{{mobile}}" {% if form.mobile.errors %} class="error" {% endif %}/>
+                                            <div class="error-messages">
+                                                {% if form.mobile.errors %}
+                                                    <label for="mobile" generated="true" class="error" style="">{{form.mobile.errors}}</label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">电话</label>
+                                        <div class="mws-form-item large">
+                                            {% if telephone %}
+                                                <input type="text" name="telephone" id='telephone' value="{{telephone}}" {% if form.telephone.errors %} class="error" {% endif %}/>
+                                            {% else %}
+                                                <input type="text" name="telephone" id='telephone' {% if form.telephone.errors %} class="error" {% endif %}/>
+                                            {% endif %}
+                                            <div class="error-messages">
+                                                {% if form.telephone.errors %}
+                                                    <label for="telephone" generated="true" class="error" style="">{{form.telephone.errors}}</label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">工作单位</label>
+                                        <div class="mws-form-item large">
+                                            {% if workspace %}
+                                                <input type="text" name="workspace" id='workspace' value="{{workspace}}" {% if form.workspace.errors %} class="error" {% endif %}/>
+                                            {% else %}
+                                                <input type="text" name="workspace" id='workspace' {% if form.workspace.errors %} class="error" {% endif %}/>
+                                            {% endif %}
+                                            
+                                            <div class="error-messages">
+                                                {% if form.workspace.errors %}
+                                                    <label for="workspace" generated="true" class="error" style="">{{form.workspace.errors}}</label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">工作单位地址</label>
+                                        <div class="mws-form-item large">
+                                            {% if address %}
+                                                <input type="text" name="address" id='address' value="{{address}}" {% if form.address.errors %} class="error" {% endif %}/>
+                                            {% else %}
+                                                <input type="text" name="address" id='address' {% if form.address.errors %} class="error" {% endif %}/>
+                                            {% endif %}
+                                            <div class="error-messages">
+                                                {% if form.address.errors %}
+                                                    <label for="address" generated="true" class="error" style="">{{form.address.errors}}</label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">职业<span class="required">*</span></label>
+                                        <div class="mws-form-item large">
+                                            <select name='job1' id='job1' style='width:178px' value='sg' {% if form.job1.errors %} class="error" {% endif %}>
+                                            </select>
+                                            <select name='job2' id='job2' style='width:178px' {% if form.job2.errors %} class="error" {% endif %}>
+                                            </select>
+                                            <input type="text" name="top_job" id='top_job' value="{{top_job}}" readonly='readonly' style='width:160px' />
+                                            <input type="text" name="sub_job" id='sub_job' value="{{sub_job}}" readonly='readonly' style='width:170px' />
+                                            <div class="error-messages">
+                                                {% if form.job1.errors %}
+                                                    <label for="job1" generated="true" class="error" style="">{{form.job1.errors}}</label>
+                                                {% endif %}
+                                                {% if form.job2.errors %}
+                                                    <label for="job2" generated="true" class="error" style="">{{form.job2.errors}}</label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">密码提示问题<span class="required">*</span></label>
+                                        <div class="mws-form-item large">
+                                            <select name='select_question' id='select_question' style='width:178px' {% if form.select_question.errors %} class="error" {% endif %}>
+                                                <option {% if birthday %} selected {% endif %}>您的生日是几月几号</option>
+                                                <option {% if school %} selected {% endif %}>您的小学是在哪里上的</option>
+                                                <option {% if pet %} selected {% endif %}>您最喜欢的宠物的名字</option>
+                                                <option {% if fathername %} selected {% endif %}> 您父亲的名字</option>
+                                                <option {% if teachername %} selected {% endif %}>您高中老师的名字</option>
+                                                <option {% if yourself %} selected {% endif %}>自己输入问题</option>
+                                            </select>
+                                            <input type="text" name="custom_question" id='custom_question' value="{{myquestion}}" style="width:180px;" readonly=ture {% if form.custom_question.errors %} class="error" {% endif %}/>
+                                            <div class="error-messages">
+                                                {% if form.select_question.errors %}
+                                                    <label for="select_question" generated="true" class="error" style="">{{form.select_question.errors}}</label>
+                                                {% endif %}
+                                                {% if form.custom_question.errors %}
+                                                    <label for="custom_question" generated="true" class="error" style="">{{form.custom_question.errors}}</label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">提示问题答案<span class="required">*</span></label>
+                                        <div class="mws-form-item large">
+                                            <input type="text" name="answer" id='answer' value="{{answer}}"  {% if form.answer.errors %} class="error" {% endif %}/>
+                                            <div class="error-messages">
+                                                {% if form.answer.errors %}
+                                                    <label for="answer" generated="true" class="error" style="">{{form.answer.errors}}</label>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mws-button-row">
+                                        <input type="submit" id= "submit_info" value="提交" class="btn btn-danger" />
+                                        <input type="reset" id="reset" value="重置" class="btn " />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% include "accounts/userinfo_change_ensure.html" %}
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+                       
+            <!-- Footer -->
+            <div id="mws-footer">
+                Copyright Your Website 2012. All Rights Reserved.
+            </div>
+{% endblock %}
+{% block extrascripts %}
+    <script type="text/javascript" src="/static/plugins/jCombo/jquery.jCombo.js"></script>
+    <script type="text/javascript" src="/static/plugins/validate/jquery.validate-min.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/accounts/userinfo.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.userinfo.validate.js"></script>
+{% endblock %}

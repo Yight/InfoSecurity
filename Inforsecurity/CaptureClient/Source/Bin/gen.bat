@@ -1,0 +1,1 @@
+protoc -I=..\SpyClient --cpp_out=..\SpyClient ..\SpyClient\ProtoMessage.proto

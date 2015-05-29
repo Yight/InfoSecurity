@@ -1,0 +1,58 @@
+package SpyClient;
+
+enum PhoneType {
+	TCP_PROTOCOL = 0;
+	UDP_PROTOCOL = 1;
+}
+
+message IpPacket{
+	required PhoneType protocoltype = 1;
+	required string sip = 2;
+	required string dip = 3;
+	required int32 sport = 4;
+	required int32 dport = 5;
+	required int32 flow = 6;
+	required string datetime = 7;
+	required int32 length = 8;
+	optional string processname = 9;
+	optional string processmd5 = 10;
+}
+
+message HttpPacket {
+	required string sip = 1;
+	required string dip = 2;
+	required int32 sport = 3;
+	required int32 dport = 4;
+	required string httpurl = 5;
+	required string datetime = 6;
+	optional string processname = 7;
+	optional string processmd5 =8;
+}
+
+message EmailPacket {
+	required string sip = 1;
+	required string dip = 2;
+	required int32 sport = 3;
+	required int32 dport = 4;
+	required string sendto = 5;
+	optional string sendcc = 6;
+	optional string sendbcc = 7;
+	required string sendfrom = 8;
+	optional string subject = 9;
+	required string datetime = 10;
+	required int32  emailtype = 11;
+	optional string processname = 12;
+	optional string processmd5 = 13;
+}
+
+message WhiteProcess{
+	required string processname = 1;
+	required string version = 2;
+	required string processmd5 = 3;
+	required string addtime = 4;
+}
+
+message TrojanPacket {
+  required int32 id = 2;
+
+}

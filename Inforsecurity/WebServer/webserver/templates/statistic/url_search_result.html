@@ -1,0 +1,106 @@
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/css/email_search/email_search.css" media="screen" /> 
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/email/email.css" media="screen" /> 
+{% endblock %}
+{% block maincontainer %}                
+
+            <div id="tip" style="background:#333338;
+            font-size:16px;
+            color:#c6d62b; 
+            padding:4px;
+            border-width: 1px;
+            border-style: solid;
+            -moz-border-radius: 11px;
+            -khtml-border-radius: 11px;
+            -webkit-border-radius: 11px;
+            border-radius: 11px;
+            position:absolute;
+            visibility:hidden;
+            word-wrap:break-word;
+            z-index:999"></div>
+            <div class="container">
+
+                
+                <div class="mws-panel grid_8" style="margin-bottom:0px">
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i> URL统计记录</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+
+                        <table class="mws-datatable-fn mws-table" name="resurls" id="resurls_search" style="text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>编号</th>
+                                    <th>用户</th>
+                                    <th>发送时间</th>
+                                    <th>可疑URL</th>
+                                    <th>类型</th>
+                                    <th>风险值</th>
+                                    <th>源ip</th>
+                                    <th>目的ip</th>
+                                    <th>源端口</th>
+                                    <th>目的端口</th>
+                                    <th>进程名</th>
+                                    <th>进程MD5</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <div class="mws-panel grid_8" >
+                    <div class="mws-panel-body no-padding">
+
+                        <table class="mws-datatable-fn mws-table" style="text-align:center;" id='url_receiver_detail'>
+                            <thead>
+                                <tr>
+                                    <th>可疑URL地址</th>
+                                    <th>目的端口</th>
+                                    <th>源ip</th>
+                                    <th>访问时间</th>
+                                    <th>访问次数</th>
+                                    <th>控制类型</th>
+                                    <th>时段控制</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div id="mws-jui-dialog">
+                    <div class="mws-dialog-inner">
+                        <div id="container"></div>
+                    </div>
+                </div>
+                <div style='display:none'>
+                    <input type='hidden' name='urltypes' id='urltypes' value='{{form.urltypes|join:','}}' />
+                    <input type='hidden' name='begintime' id='begintime'value='{{form.begintime|date:"Y-m-d"}}' />
+                    <input type='hidden' name='endtime' id='endtime' value='{{form.endtime|date:"Y-m-d"}}' />
+                    <input type='hidden' name='sip' id='sip' value='{{form.sip}}' />
+                    <input type='hidden' name='dip' id='dip' value='{{form.dip}}' />
+                    <input type='hidden' name='url' id='sender' value='{{form.url}}' />
+                    <input type='hidden' name='riskvalue' id='riskvalue' value='{{form.riskvalue}}' />
+                </div>
+                <!-- Panels End -->
+            </div>
+
+{% endblock %}
+{% block extrascripts %}
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.table.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/statistic/url.js"></script>
+    <script type="text/javascript" src="/static/js/highstock/highstock.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.widget.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.validate.js"></script>
+    <script type="text/javascript" src="/static/plugins/datatables/extra/TableTools.js"></script>
+    <script type="text/javascript" src="/static/plugins/datatables/extra/ZeroClipboard.js"></script>
+{% endblock %}

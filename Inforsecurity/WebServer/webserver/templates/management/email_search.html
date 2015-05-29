@@ -1,0 +1,70 @@
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/black_email/black_email.css" media="screen" /> 
+{% endblock %}
+{% block maincontainer %}
+            <br/>
+            <div id="tip" style="background:#333338;
+            font-size:16px;
+            color:#c6d62b; 
+            padding:4px;
+            border-width: 1px;
+            border-style: solid;
+            -moz-border-radius: 11px;
+            -khtml-border-radius: 11px;
+            -webkit-border-radius: 11px;
+            border-radius: 11px;
+            position:absolute;
+            visibility:hidden;
+            word-wrap:break-word;
+            z-index:999"></div>
+            <!-- Inner Container Start -->
+            <div class="container">
+                
+                <div class="mws-panel grid_8" style="margin-bottom:0px">
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i>收件人黑名单管理查询</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+
+                        <table class="mws-datatable-fn mws-table" name="blackemail_list_search" id="blackemail_list_search" style="text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>编号</th>
+                                    <th>邮件地址</th>
+                                    <th>邮件类型</th>
+                                    <th>风险值</th>
+                                    <th>详细描述</th>
+                                    <th>添加用户</th>
+                                    <th>添加日期</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div style='display:None'>
+                    <input type='hidden' name='blackemailtype' id='blackemailtype' value='{{form.blackemailtype|join:','}}' />
+                    <input type='hidden' name='begintime' id='begintime'value='{{form.begintime|date:"Y-m-d"}}' />
+                    <input type='hidden' name='endtime' id='endtime' value='{{form.endtime|date:"Y-m-d"}}' />
+                    <input type='hidden' name='blackemail' id='blackemail' value='{{form.blackemail}}' />
+                    <input type='hidden' name='riskvalue' id='riskvalue' value='{{form.riskvalue|default_if_none:""}}' />
+                </div>
+            
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+            {% endblock %}
+            
+{% block extrascripts %}
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.table.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/blacklistmanage/blackemail.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/TableTools.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/ZeroClipboard.js"></script>
+{% endblock %}

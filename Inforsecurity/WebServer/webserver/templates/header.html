@@ -1,0 +1,36 @@
+
+	<!-- Header -->
+	<div id="mws-header" class="clearfix">
+    
+    	<!-- Logo Container -->
+    	<div id="mws-logo-container">
+        
+        	<!-- Logo Wrapper, images put within this wrapper will always be vertically centered -->
+        	<div id="mws-logo-wrap">
+            	<img src="/static/images/mws-logo.png" alt="mws admin" />
+			</div>
+        </div>
+        
+        <!-- User Tools (notifications, logout, profile, change password) -->
+        <div id="mws-user-tools" class="clearfix">
+        
+            
+            
+            <!-- User Information and functions section -->
+            <div id="mws-user-info" class="mws-inset">
+
+                
+                <!-- Username and Functions -->
+                <div id="mws-user-functions">
+                    <div id="mws-username">
+                        欢迎, <a href="/accounts/get_user_info/">{{user.username}}</a>
+                    </div>
+                    <ul>
+
+                        <li><a href="/accounts/resetpwd/">修改密码</a></li>
+                        <li><a href="/accounts/logout/">退出</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

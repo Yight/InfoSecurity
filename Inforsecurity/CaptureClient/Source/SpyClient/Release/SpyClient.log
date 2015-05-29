@@ -1,0 +1,141 @@
+﻿Build started 2013/4/27 15:05:55.
+     1>Project "E:\Inforsecurity\CaptureClient\Source\SpyClient\SpyClient.vcxproj" on node 3 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Release\SpyClient.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Release\SpyClient.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IE:\Inforsecurity\CaptureClient\Source\SpyClient\snappy /IE:\Inforsecurity\CaptureClient\Source\thirdparty\WpdPack\Include /IE:\Inforsecurity\CaptureClient\Source\thirdparty\log4cplus\Include /IE:\Inforsecurity\CaptureClient\Source\thirdparty\protobuf\Include /IE:\Inforsecurity\CaptureClient\Source\thirdparty\sqlite3 /IE:\Inforsecurity\CaptureClient\Source\thirdparty\snappy /IE:\Inforsecurity\CaptureClient\Source\thirdparty\ext_stl /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D WPCAP /D HAVE_REMOTE /D _MBCS /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt AppConfig.cpp base64.cpp CapturePacketThread.cpp EmailParse.cpp FileParse.cpp LogMod.cpp MainCtrl.cpp md5.cpp PacketStruct.cpp ProcessMap.cpp ProtobufThread.cpp ProtoMessage.pb.cc SendDataThread.cpp ServiceCtrl.cpp "snappy\snappy-sinksource.cc" "snappy\snappy-stubs-internal.cc" snappy\snappy.cc SpyClient.cpp stdafx.cpp Utils.cpp
+         AppConfig.cpp
+     1>AppConfig.cpp(101): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>AppConfig.cpp(118): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>AppConfig.cpp(122): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>AppConfig.cpp(129): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>AppConfig.cpp(143): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>AppConfig.cpp(152): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>AppConfig.cpp(154): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>AppConfig.cpp(370): warning C4244: 'initializing' : conversion from 'ULONGLONG' to 'int', possible loss of data
+     1>AppConfig.cpp(352): warning C4101: 'e' : unreferenced local variable
+     1>AppConfig.cpp(517): warning C4244: 'initializing' : conversion from 'ULONGLONG' to 'int', possible loss of data
+     1>AppConfig.cpp(499): warning C4101: 'e' : unreferenced local variable
+     1>AppConfig.cpp(537): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>AppConfig.cpp(549): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>AppConfig.cpp(555): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+         base64.cpp
+     1>base64.cpp(145): warning C4305: '=' : truncation from 'int' to 'char'
+     1>base64.cpp(145): warning C4309: '=' : truncation of constant value
+         CapturePacketThread.cpp
+     1>CapturePacketThread.cpp(112): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>CapturePacketThread.cpp(283): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>CapturePacketThread.cpp(290): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>CapturePacketThread.cpp(360): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>CapturePacketThread.cpp(361): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+         EmailParse.cpp
+     1>EmailParse.cpp(939): warning C4018: '<' : signed/unsigned mismatch
+     1>EmailParse.cpp(937): warning C4101: 'p' : unreferenced local variable
+         FileParse.cpp
+         LogMod.cpp
+     1>LogMod.cpp(125): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+         MainCtrl.cpp
+     1>MainCtrl.cpp(137): warning C4244: 'initializing' : conversion from 'ULONGLONG' to 'int', possible loss of data
+         md5.cpp
+     1>md5.cpp(135): warning C4244: 'argument' : conversion from 'std::streamsize' to 'size_t', possible loss of data
+         PacketStruct.cpp
+         ProcessMap.cpp
+     1>ProcessMap.cpp(379): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>ProcessMap.cpp(382): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+         ProtobufThread.cpp
+         ProtoMessage.pb.cc
+         SendDataThread.cpp
+     1>SendDataThread.cpp(290): warning C4101: 'e' : unreferenced local variable
+     1>SendDataThread.cpp(340): warning C4101: 'e' : unreferenced local variable
+         ServiceCtrl.cpp
+         snappy-sinksource.cc
+         snappy-stubs-internal.cc
+     1>e:\inforsecurity\captureclient\source\spyclient\snappy\snappy-stubs-internal.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+         snappy.cc
+     1>e:\inforsecurity\captureclient\source\spyclient\snappy\snappy-stubs-internal.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>snappy\snappy.cc(1005): warning C4018: '<=' : signed/unsigned mismatch
+         SpyClient.cpp
+         stdafx.cpp
+         Utils.cpp
+       Link:
+         E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Inforsecurity\CaptureClient\Source\Release\SpyClient.exe" /INCREMENTAL:NO /NOLOGO ws2_32.lib sqlite3.lib wpcap.lib libprotobuf.lib libprotoc.lib log4cplus.lib Iphlpapi.lib psapi.lib packet.lib /MANIFEST /ManifestFile:"Release\SpyClient.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Inforsecurity\CaptureClient\Source\Release\SpyClient.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Inforsecurity\CaptureClient\Source\Release\SpyClient.lib" /MACHINE:X86 Release\AppConfig.obj
+         Release\base64.obj
+         Release\CapturePacketThread.obj
+         Release\EmailParse.obj
+         Release\FileParse.obj
+         Release\LogMod.obj
+         Release\MainCtrl.obj
+         Release\md5.obj
+         Release\PacketStruct.obj
+         Release\ProcessMap.obj
+         Release\ProtobufThread.obj
+         Release\ProtoMessage.pb.obj
+         Release\SendDataThread.obj
+         Release\ServiceCtrl.obj
+         "Release\snappy-sinksource.obj"
+         "Release\snappy-stubs-internal.obj"
+         Release\snappy.obj
+         Release\SpyClient.obj
+         Release\stdafx.obj
+         Release\Utils.obj
+         ..\thirdparty\sqlite3\sqlite3.lib
+         Generating code
+     1>e:\inforsecurity\captureclient\source\spyclient\processmap.cpp(609): warning C4715: 'Md5Map::CheckDict' : not all control paths return a value
+         Finished generating code
+     1>libprotobuf.lib(coded_stream.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(coded_stream.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(common.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(common.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(descriptor.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(descriptor.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(descriptor.pb.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(descriptor.pb.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(descriptor_database.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(descriptor_database.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(dynamic_message.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(dynamic_message.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(extension_set.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(extension_set.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(extension_set_heavy.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(extension_set_heavy.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(generated_message_reflection.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(generated_message_reflection.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(generated_message_util.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(generated_message_util.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(message.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(message.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(message_lite.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(message_lite.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(once.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(once.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(reflection_ops.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(reflection_ops.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(repeated_field.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(repeated_field.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(structurally_valid.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(structurally_valid.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(strutil.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(strutil.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(substitute.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(substitute.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(text_format.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(text_format.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(tokenizer.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(tokenizer.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(unknown_field_set.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(unknown_field_set.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(wire_format.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(wire_format.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(wire_format_lite.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(wire_format_lite.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(zero_copy_stream.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(zero_copy_stream.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(zero_copy_stream_impl.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(zero_copy_stream_impl.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+     1>libprotobuf.lib(zero_copy_stream_impl_lite.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'libprotobuf.lib(zero_copy_stream_impl_lite.obj)' or at 'E:\Inforsecurity\CaptureClient\Source\Release\vc100.pdb'; linking object as if no debug info
+         SpyClient.vcxproj -> E:\Inforsecurity\CaptureClient\Source\Release\SpyClient.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\Inforsecurity\CaptureClient\Source\Release\SpyClient.exe;#1" /manifest Release\SpyClient.exe.intermediate.manifest "E:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Release\SpyClient.unsuccessfulbuild".
+         Touching "Release\SpyClient.lastbuildstate".
+     1>Done Building Project "E:\Inforsecurity\CaptureClient\Source\SpyClient\SpyClient.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:41.77

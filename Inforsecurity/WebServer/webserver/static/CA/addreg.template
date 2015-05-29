@@ -1,0 +1,6 @@
+@echo off
+cls
+color 0a
+REG ADD HKCR\Software\MoniClient /v UserID /t REG_SZ /d #USER#
+certutil -addstore -f Root  "ca.crt"
+certutil -f -p #PWD#  -importpfx client.pfx

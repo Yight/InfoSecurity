@@ -1,0 +1,91 @@
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+{% endblock %}
+
+{% block maincontainer %}  
+            <!-- Inner Container Start -->
+            <div class="container">
+                <div class="grid_8">
+                        <div id='errors' class="mws-form-message error" style="display:none;">
+                        </div>
+                    {% if error %}
+                        <div id='error' class="mws-form-message error">
+                            {{jobinfo}}
+                        </div>
+                    {% endif %}
+                    {% if success %}
+                        <div id='success' class="mws-form-message success">
+                            {{jobinfo}}
+                        </div>
+                    {% endif %}
+                    <div class="mws-panel">
+                        <div class="mws-panel-header">
+                            <span><i class="icon-magic"></i>职业管理</span>
+                        </div>
+                        <div class="mws-panel-body no-padding">
+                                <div class="mws-form-inline">
+                                 <form class="mws-form"  action="/systemmanage/job_manage/?id=1" method="post">
+                                 {% csrf_token %}
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">添加大类</label>
+                                        <div class="mws-form-item small">
+                                            <input type="text" name="add_top_category" id="add_top_category" style='width:178px'  />
+                                            <input type="submit" value="确定" id="add_top_category_click" class="btn btn-danger" />
+                                        </div>
+                                    </div>
+                                 </form>
+                                 <form class="mws-form"  action="/systemmanage/job_manage/?id=2" method="post">
+                                 {% csrf_token %}
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">添加小类</label>
+                                        <div class="mws-form-item small">
+                                            <select name="add_sub_category_top" id="add_sub_category_top" style='width:178px'>
+                                            </select>
+                                            <input type="text" name="add_sub_category" id="add_sub_category" style='width:178px' />
+                                            <input type="submit" value="确定" id="add_sub_category_click" class="btn btn-danger" />
+                                        </div>
+                                    </div>
+                                 </form>
+                                 <form id="delete_top" class="mws-form"  action="/systemmanage/job_manage/?id=3" method="post">
+                                 {% csrf_token %}
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">删除大类</label>
+                                        <div class="mws-form-item small">
+                                            <select name=delete_top_category id=delete_top_category style='width:178px'>
+                                            </select>
+                                            <input type="submit" value="确定" id="delete_top_category_click" class="btn btn-danger" />
+                                        </div>
+                                    </div>
+                                  </form>
+                                  <form id="delete_sub" class="mws-form"  action="/systemmanage/job_manage/?id=4" method="post">
+                                  {% csrf_token %}
+                                    <div class="mws-form-row">
+                                        <label class="mws-form-label">删除小类</label>
+                                        <div class="mws-form-item small">
+                                            <select name="delete_sub_category_top" id="delete_sub_category_top" style='width:178px'>
+                                            </select>
+                                            <select name="delete_sub_category" id="delete_sub_category" style='width:178px'>
+                                            </select>
+                                            <input type="submit" value="确定" id="delete_sub_category_click" class="btn btn-danger" />
+                                        </div>
+                                    </div>
+                                  </form>
+                                </div>
+                                <div class="mws-button-row">
+                                </div>
+                        </div>
+                    </div>
+                    {% include "usermanage/delete_top_ensure.html" %}
+                    {% include "usermanage/delete_sub_ensure.html" %}
+                <!-- Panels End -->
+            </div>
+{% endblock %}
+
+{% block extrascripts %}
+    <script type="text/javascript" src="/static/js/infosecurity/sysmanage/job.ensure.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/sysmanage/job.jCombo.js"></script>
+    <script type="text/javascript" src="/static/plugins/jCombo/jquery.jCombo.js"></script>
+{% endblock %}
+

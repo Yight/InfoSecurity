@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+
+{% endblock %}
+{% block maincontainer %}
+<br/>
+            <!-- Inner Container Start -->
+            <div class="container">
+
+                
+                <div  class="mws-panel grid_8" style="margin-bottom:0px">
+                    <div id='info'>
+                    </div>
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i>报警名单</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+
+                        <table class="mws-datatable-fn mws-table" name="alarm_list" id="alarm_list" style="text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>用户</th>
+                                    <th>风险值</th>
+                                    <th>报警数据</th>
+                                    <th>是否计算</th>
+                                    <th>添加时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+            {% endblock %}
+            
+{% block extrascripts %}
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.table.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/usersettings/alarm_list.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.widget.js"></script>
+<script type="text/javascript" src="/static/js/infosecurity/infosecurity.validate.js"  charset="UTF-8" ></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/TableTools.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/ZeroClipboard.js"></script>
+{% endblock %}

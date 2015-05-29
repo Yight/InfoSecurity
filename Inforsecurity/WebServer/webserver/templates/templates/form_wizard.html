@@ -1,0 +1,497 @@
+
+{% extends "base_generic.html" %}
+
+{% block maincontainer %}    
+        	<!-- Inner Container Start -->
+            <div class="container">
+            
+            	<!-- Statistics Button Container -->
+            	<div class="mws-stat-container clearfix">
+                	
+                    <!-- Statistic Item -->
+                	<a class="mws-stat" href="form_wizard.html#">
+                    	<!-- Statistic Icon (edit to change icon) -->
+                    	<span class="mws-stat-icon icol32-building"></span>
+                        
+                        <!-- Statistic Content -->
+                        <span class="mws-stat-content">
+                        	<span class="mws-stat-title">Floors Climbed</span>
+                            <span class="mws-stat-value">324</span>
+                        </span>
+                    </a>
+
+                	<a class="mws-stat" href="form_wizard.html#">
+                    	<!-- Statistic Icon (edit to change icon) -->
+                    	<span class="mws-stat-icon icol32-sport"></span>
+                        
+                        <!-- Statistic Content -->
+                        <span class="mws-stat-content">
+                        	<span class="mws-stat-title">Calories Burned</span>
+                            <span class="mws-stat-value down">74%</span>
+                        </span>
+                    </a>
+
+                	<a class="mws-stat" href="form_wizard.html#">
+                    	<!-- Statistic Icon (edit to change icon) -->
+                    	<span class="mws-stat-icon icol32-walk"></span>
+                        
+                        <!-- Statistic Content -->
+                        <span class="mws-stat-content">
+                        	<span class="mws-stat-title">Kilometers Walked</span>
+                            <span class="mws-stat-value">14</span>
+                        </span>
+                    </a>
+                    
+                	<a class="mws-stat" href="form_wizard.html#">
+                    	<!-- Statistic Icon (edit to change icon) -->
+                    	<span class="mws-stat-icon icol32-bug"></span>
+                        
+                        <!-- Statistic Content -->
+                        <span class="mws-stat-content">
+                        	<span class="mws-stat-title">Bugs Fixed</span>
+                            <span class="mws-stat-value up">22%</span>
+                        </span>
+                    </a>
+                    
+                	<a class="mws-stat" href="form_wizard.html#">
+                    	<!-- Statistic Icon (edit to change icon) -->
+                    	<span class="mws-stat-icon icol32-car"></span>
+
+                        <!-- Statistic Content -->
+                        <span class="mws-stat-content">
+                        	<span class="mws-stat-title">Cars Repaired</span>
+                            <span class="mws-stat-value">77</span>
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Panels Start -->
+
+            	<div class="mws-panel grid_8">
+                	<div class="mws-panel-header">
+                    	<span><i class="icon-magic"></i> Default Wizard Form</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                        <form class="mws-form wzd-default">
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-accept"></i> Member Profile</legend>
+                                <div id class="mws-form-row">
+                                    <label class="mws-form-label">Fullname <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="fullname" class="required" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Email <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="email" class="required email" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Address <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <textarea name="address" rows="100%" cols="100%" class="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Gender <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list">
+                                            <li><input type="radio" id="male" name="gender" class="required"/> <label for="male">Male</label></li>
+                                            <li><input type="radio" id="female" name="gender" /> <label for="female">Female</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="gender" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-delivery"></i> Membership Type</legend>
+                                <div id class="mws-form-row">
+                                    <label class="mws-form-label">Membership Plan <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <select class="required">
+                                            <option>Free</option>
+                                            <option>Standard</option>
+                                            <option>Premium</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Subscription Period <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <select class="required">
+                                            <option>One Month</option>
+                                            <option>Six Months</option>
+                                            <option>Twelve Months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Payment Method <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list">
+                                            <li><input type="radio" id="cc" name="pm" class="required" /> <label for="cc">Credit Card</label></li>
+                                            <li><input type="radio" id="pp" name="pm" /> <label for="pp">PayPal</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="pm" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-user"></i> Confirmation</legend>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Message <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <textarea name="address" rows="100%" cols="100%" class="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Subscribe Newsletter <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list inline">
+                                            <li><input type="radio" id="sn_yes" name="sn" class="required" /> <label for="sn_yes">Yes</label></li>
+                                            <li><input type="radio" id="sn_no" name="sn" /> <label for="sn_no">No</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="sn" style="display:none"></label>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">I agree to the TOS <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list inline">
+                                            <li><input type="checkbox" id="tos_y" name="tos" class="required" /> <label for="tos_y">Yes</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="tos" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mws-panel grid_8">
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i> Wizard Form with Validation</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                        <form class="mws-form wzd-validate">
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-accept"></i> Member Profile</legend>
+                                <div id class="mws-form-row">
+                                    <label class="mws-form-label">Fullname <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="fullname" class="required" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Email <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="email" class="required email" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Address <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <textarea name="address" rows="100%" cols="100%" class="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Gender <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list">
+                                            <li><input type="radio" id="male" name="gender" class="required"/> <label for="male">Male</label></li>
+                                            <li><input type="radio" id="female" name="gender" /> <label for="female">Female</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="gender" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-delivery"></i> Membership Type</legend>
+                                <div id class="mws-form-row">
+                                    <label class="mws-form-label">Membership Plan <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <select class="required">
+                                            <option>Free</option>
+                                            <option>Standard</option>
+                                            <option>Premium</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Subscription Period <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <select class="required">
+                                            <option>One Month</option>
+                                            <option>Six Months</option>
+                                            <option>Twelve Months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Payment Method <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list">
+                                            <li><input type="radio" id="cc" name="pm" class="required" /> <label for="cc">Credit Card</label></li>
+                                            <li><input type="radio" id="pp" name="pm" /> <label for="pp">PayPal</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="pm" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-user"></i> Confirmation</legend>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Message <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <textarea name="address" rows="100%" cols="100%" class="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Subscribe Newsletter <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list inline">
+                                            <li><input type="radio" id="sn_yes" name="sn" class="required" /> <label for="sn_yes">Yes</label></li>
+                                            <li><input type="radio" id="sn_no" name="sn" /> <label for="sn_no">No</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="sn" style="display:none"></label>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">I agree to the TOS <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list inline">
+                                            <li><input type="checkbox" id="tos_y" name="tos" class="required" /> <label for="tos_y">Yes</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="tos" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mws-panel grid_8">
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i> Vertical Wizard Form</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                        <form class="mws-form wzd-vertical">
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-accept"></i> Member Profile</legend>
+                                <div id class="mws-form-row">
+                                    <label class="mws-form-label">Fullname <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="fullname" class="required" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Email <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="email" class="required email" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Address <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <textarea name="address" rows="100%" cols="100%" class="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Gender <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list">
+                                            <li><input type="radio" id="male" name="gender" class="required"/> <label for="male">Male</label></li>
+                                            <li><input type="radio" id="female" name="gender" /> <label for="female">Female</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="gender" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-delivery"></i> Membership Type</legend>
+                                <div id class="mws-form-row">
+                                    <label class="mws-form-label">Membership Plan <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <select class="required">
+                                            <option>Free</option>
+                                            <option>Standard</option>
+                                            <option>Premium</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Subscription Period <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <select class="required">
+                                            <option>One Month</option>
+                                            <option>Six Months</option>
+                                            <option>Twelve Months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Payment Method <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list">
+                                            <li><input type="radio" id="cc" name="pm" class="required" /> <label for="cc">Credit Card</label></li>
+                                            <li><input type="radio" id="pp" name="pm" /> <label for="pp">PayPal</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="pm" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-user"></i> Confirmation</legend>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Message <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <textarea name="address" rows="100%" cols="100%" class="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Subscribe Newsletter <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list inline">
+                                            <li><input type="radio" id="sn_yes" name="sn" class="required" /> <label for="sn_yes">Yes</label></li>
+                                            <li><input type="radio" id="sn_no" name="sn" /> <label for="sn_no">No</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="sn" style="display:none"></label>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">I agree to the TOS <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list inline">
+                                            <li><input type="checkbox" id="tos_y" name="tos" class="required" /> <label for="tos_y">Yes</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="tos" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mws-panel grid_8">
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i> AJAX Wizard Form</span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                        <form class="mws-form wzd-ajax" action="http://www.malijuthemeshop.com/live_previews/mws-admin/php/wizard.php" method="post">
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-accept"></i> Member Profile</legend>
+                                <div id class="mws-form-row">
+                                    <label class="mws-form-label">Fullname <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="fullname" class="required" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Email <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <input type="text" name="email" class="required email" />
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Address <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <textarea name="address" rows="100%" cols="100%" class="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Gender <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list">
+                                            <li><input type="radio" id="male" name="gender" class="required"/> <label for="male">Male</label></li>
+                                            <li><input type="radio" id="female" name="gender" /> <label for="female">Female</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="gender" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-delivery"></i> Membership Type</legend>
+                                <div id class="mws-form-row">
+                                    <label class="mws-form-label">Membership Plan <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <select class="required">
+                                            <option>Free</option>
+                                            <option>Standard</option>
+                                            <option>Premium</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Subscription Period <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <select class="required">
+                                            <option>One Month</option>
+                                            <option>Six Months</option>
+                                            <option>Twelve Months</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Payment Method <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list">
+                                            <li><input type="radio" id="cc" name="pm" class="required" /> <label for="cc">Credit Card</label></li>
+                                            <li><input type="radio" id="pp" name="pm" /> <label for="pp">PayPal</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="pm" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="wizard-step mws-form-inline">
+                                <legend class="wizard-label"><i class="icol-user"></i> Confirmation</legend>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Message <span class="required">*</span></label>
+                                    <div class="mws-form-item large">
+                                        <textarea name="address" rows="100%" cols="100%" class="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">Subscribe Newsletter <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list inline">
+                                            <li><input type="radio" id="sn_yes" name="sn" class="required" /> <label for="sn_yes">Yes</label></li>
+                                            <li><input type="radio" id="sn_no" name="sn" /> <label for="sn_no">No</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="sn" style="display:none"></label>
+                                    </div>
+                                </div>
+                                <div class="mws-form-row">
+                                    <label class="mws-form-label">I agree to the TOS <span class="required">*</span></label>
+                                    <div class="mws-form-item">
+                                        <ul class="mws-form-list inline">
+                                            <li><input type="checkbox" id="tos_y" name="tos" class="required" /> <label for="tos_y">Yes</label></li>
+                                        </ul>
+                                        <label class="error plain" generated="true" for="tos" style="display:none"></label>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Panels End -->
+            </div>
+            <!-- Inner Container End -->
+                       
+{% endblock %}
+{% block extrascripts %}
+    <script src="/static/js/demo/demo.wizard.js"></script>
+{% endblock %}

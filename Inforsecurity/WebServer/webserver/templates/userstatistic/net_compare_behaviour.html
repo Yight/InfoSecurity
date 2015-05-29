@@ -1,0 +1,59 @@
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+    <style type="text/css">
+        .dynamicguagediv
+        {
+            vertical-align: top;
+            margin: 5px 1% 13px 1%;
+            text-decoration: none;
+            color: #323232;
+            border: 1px solid #CCC;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            float:left;
+        }
+    </style>
+{% endblock %}
+{% block maincontainer %}  
+   <br/>
+<div id="tip" style="background:#333338;
+    font-size:16px;
+    color:#c6d62b; 
+    padding:4px;
+    border-width: 1px;
+    border-style: solid;
+    -moz-border-radius: 11px;
+    -khtml-border-radius: 11px;
+    -webkit-border-radius: 11px;
+    border-radius: 11px;
+    position:absolute;
+    visibility:hidden;
+    word-wrap:break-word;
+    z-index:999">
+</div>
+
+            <div class="container" >
+                <input id = 'names' name = 'names'  value = '{{ names }}' style="display: none;">
+
+                </input>
+                <div  class="mws-panel grid_8" style="margin-bottom:0px">
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i>网络事件统计比对</span>
+                    </div>
+                    <div class="mws-panel-body no-padding" id = 'container_show' name = "container_show">
+
+                    </div>
+                </div>
+                <!-- Panels End -->
+            </div>
+
+<!-- Inner Container End -->
+{% endblock %}
+
+{% block extrascripts %}
+    <script type="text/javascript" src="/static/js/highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="/static/js/highstock/highstock.js"></script>
+    <script type="text/javascript" src="/static/js/highcharts/highcharts-more.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/userstatistic/net_compare.js"></script> 
+{% endblock %}

@@ -1,0 +1,71 @@
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+    	DocumentRoot /var/www/WebServer/webserver
+	#WSGIPythonPath /var/www/WebServer/webserver:/var/www/WebServer/DMENV/lib/python2.7/site-packages
+
+	Alias /favicon.ico /var/www/WebServer/webserver/static/images/favicon.ico
+
+	Alias /static/ /var/www/WebServer/webserver/static/
+
+	<Directory /var/www/WebServer/webserver/static/>
+		Order deny,allow
+		Allow from all
+	</Directory>
+
+	WSGIScriptAlias / /var/www/WebServer/webserver/apache/django.wsgi
+
+	<Directory /var/www/WebServer/webserver/apache>
+		Order allow,deny
+		Allow from all
+	</Directory>
+	SSLEngine on
+
+	SSLCertificateFile    /var/www/WebServer/webserver/static/CA/server.crt
+	SSLCertificateKeyFile /var/www/WebServer/webserver/static/CA//server.key
+
+
+	SSLCACertificatePath /var/www/WebServer/webserver/static/CA
+	SSLCACertificateFile /var/www/WebServer/webserver/static/CA/cacert.pem
+
+	SSLVerifyClient require
+	SSLVerifyDepth  1
+
+#	DocumentRoot /var/www
+#	<Directory />
+#		Options FollowSymLinks
+#		AllowOverride None
+#	</Directory>
+#	<Directory /var/www/>
+#		Options Indexes FollowSymLinks MultiViews
+#		AllowOverride None
+#		Order allow,deny
+#		allow from all
+#	</Directory>
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	<Directory "/usr/lib/cgi-bin">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/hawkeye_error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+    Alias /doc/ "/usr/share/doc/"
+    <Directory "/usr/share/doc/">
+        Options Indexes MultiViews FollowSymLinks
+        AllowOverride None
+        Order deny,allow
+        Deny from all
+        Allow from 127.0.0.0/255.0.0.0 ::1/128
+    </Directory>
+
+</VirtualHost>
+</IfModule>

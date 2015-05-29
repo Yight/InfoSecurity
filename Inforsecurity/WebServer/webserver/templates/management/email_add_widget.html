@@ -1,0 +1,36 @@
+<div id="blackemail_add_dialog">
+<form id="blackemail_add" method="post" class="mws-form" action='/management/blackemail/'>
+    {% csrf_token %}
+        <div id="add-blackemail-error" class="mws-form-message error" style="display:none;"></div>
+        <div class="mws-form-inline">
+            <div class="mws-form-row">
+                <label class="mws-form-label">邮件类型</label>
+                <div class="mws-form-item large">
+                    <div id='blackemail_type_add'>
+                        {% for id,value,text in emailtypes %}
+                        <input type="radio" name='blackemailtype' value="{{value}}" id="add{{id}}" /><label for="add{{id}}">{{text}}</label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">邮件地址</label>
+                <div class="mws-form-item large">
+                    <input type="text" id='add_blackemail' name='blackemail' />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">风险值</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='riskvalue' id='addriskvalue' />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">详细描述</label>
+                <div class="mws-form-item large">
+                    <textarea id='adddescription' name='description' rows="100%" cols="100%"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block maincontainer %}  
+
+            	<div class="mws-panel grid_8">
+                	<div class="mws-panel-header">
+                    	<span><i class="icon-magic"></i>风险值查看 </span>
+                    </div>
+                    <div class="mws-panel-body no-padding">
+                        <div id="container" style="height: 500px; min-width: 500px"></div>
+                    </div>
+                </div>
+            
+                <!-- Panels End -->
+{% endblock %}
+
+{% block extrascripts %}
+    <!-- Highcharts.script -->
+    <script type="text/javascript" src="/static/js/highstock/highstock.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/dashboard/dashboard.js"></script>
+{% endblock %}

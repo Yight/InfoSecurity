@@ -1,0 +1,64 @@
+{% extends "base_generic.html" %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="/static/plugins/datatables/extra/TableTools.css" media="screen"/>
+{% endblock %}
+
+
+{% block maincontainer %}  
+            <!-- Inner Container Start -->
+            <div class="container">
+
+                
+                <div  class="mws-panel grid_8" style="margin-bottom:0px">
+                    {% if add_success %}
+                    <div id='success' class="mws-form-message success">
+                        您已经操作成功!
+                    </div>
+                    {% endif %}
+                    <div id='info'>
+                    </div>
+                    <div class="mws-panel-header">
+                        <span><i class="icon-magic"></i>用户管理</span>
+                    </div>
+
+
+
+                    <div class="mws-panel-body no-padding">
+
+                        <table class="mws-datatable-fn mws-table" name="user_list" id="user_list" style="text-align:center;">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>用户名</th>
+                                    <th>用户ID</th>
+                                    <th>真实姓名</th>
+                                    <th>注册日期</th>
+<!--                                    <th>证书状态</th>-->
+                                    <th>住址</th>
+                                    <th>手机</th>
+                                    <th>email</th>
+                                    <th>下载证书</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+                <!-- Panels End -->
+            </div>
+{% endblock %}
+
+{% block extrascripts %}
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.table.js"></script>    
+    <script type="text/javascript" src="/static/js/infosecurity/sysmanage/user.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.widget.js"></script>
+    <script type="text/javascript" src="/static/js/infosecurity/infosecurity.validate.js"></script>
+    <script type="text/javascript" src="/static/plugins/datatables/extra/TableTools.js"></script>
+<script type="text/javascript" src="/static/plugins/datatables/extra/ZeroClipboard.js"></script>
+{% endblock %}
+

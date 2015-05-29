@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8" />
+
+<!-- Viewport Metatag -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+<!-- Required Stylesheets -->
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/static/css/fonts/ptsans/stylesheet.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/static/css/fonts/icomoon/style.css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="/static/css/login.min.css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="/static/css/mws-theme.css" media="screen" />
+<link rel = "Shortcut Icon" href="/static/images/favicon.ico">
+<title>WiseEye系统登录页面</title>
+
+</head>
+
+<body>
+
+    <div id="mws-login-wrapper" style="text-align:center;width:334px;" >
+        <div id="mws-login" style="width:300px;">
+            <h1>登录</h1>
+            <div class="mws-login-lock"><i class="icon-lock"></i></div>
+            <div id="mws-login-form" >
+               {% if error %}
+               <div id='error' class="mws-form-message error">
+                   {{loginfo}}
+               </div>
+               {% endif %}
+               {% if success %}
+               <div id='success' class="mws-form-message success">
+                   恭喜您注册成功，请等待审核通过后再登陆
+               </div>
+               {% endif %}
+                <form class="mws-form" action="/accounts/login_post/" method="post">
+                     {% csrf_token %}
+                    <div class="mws-form-row">
+                        <div class="mws-form-item large">
+                            <span style="width: 50px; display: block;float:left;"><font color="white">用户名:</font></span>
+                            <input type="text" id="username" name="username" class="mws-login-username required" placeholder="用户名"style="width:150px;height:30px;"/>
+                            <input id="register" type="button" value="注册用户" class="btn btn-success mws-login-button" style="width:95px; "/>
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <div class="mws-form-item large">
+                            <span style="width: 50px; display: block;float:left;"><font color="white">密码:</font></span>
+                            <input type="password" name="password" class="mws-login-password required" placeholder="密码" style="width:150px;height:30px;"/>
+                            <input id="fogetpwd" type="button" value="忘记密码？" class="btn btn-success mws-login-button" style="width:95px; "/>
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <div class="mws-form-item large">
+                            <span style="width: 50px; display: block;float:left;"><font color="white">验证码:</font></span>
+                            <input type="text" name="validvalue" class="mws-login" placeholder="手机验证码" style="width:150px" />
+                            <input id="phonecerify" type="button" value="获取验证码" class="btn btn-success mws-login-button" style="width:95px"/>
+                        </div>
+                    </div>
+                    
+                    <div class="mws-form-row" style="text-align:center;">
+                        <input type="submit" value="登录" class="btn btn-success mws-login-button" style="width:150px"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Plugins -->
+    <script type="text/javascript" src="/static/js/libs/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/static/js/libs/jquery.placeholder.min.js"></script>
+
+    <!-- jQuery-UI Dependent Scripts -->
+    <script type="text/javascript" src="/static/jui/js/jquery-ui-effects.min.js"></script>
+
+    <!-- Plugin Scripts -->
+    <script type="text/javascript" src="/static/plugins/validate/jquery.validate-min.js"></script>
+
+    <!-- Login Script -->
+    <script type="text/javascript" src="/static/js/core/login.js"></script>
+    <!-- Slidup Script  -->
+    <script type="text/javascript" src="/static/js/core/mws.js"></script>
+
+</body>
+</html>

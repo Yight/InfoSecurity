@@ -1,0 +1,54 @@
+<div id="url-search-form-dialog">
+<form id="url-search-validate" method="post" class="mws-form" action='/user_statistic/url_search/'>
+    {% csrf_token %}
+        <div id="url-search-validate-error" class="mws-form-message error" style="display:none;"></div>
+        <div class="mws-form-inline">
+            <div class="mws-form-row">
+                <label class="mws-form-label">记录类型</label>
+                <div class="mws-form-item large">
+                    <div id='url_type'>
+                        {% for id,value,text in urltypes %}
+                        <input type="checkbox" name='urltypes' value="{{value}}" id="{{id}}" /><label for="{{id}}">{{text}}</label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">开始日期</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='begintime' id='begintime' readonly="readonly"  class="mws-datepicker" />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">结束日期</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='endtime' id='endtime' readonly="readonly"  class="mws-datepicker" />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">源IP</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='sip' id='sip'/>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">目的IP</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='dip' id='dip'/>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">URL</label>
+                <div class="mws-form-item large">
+                    <input type="text" id='url' name='url' />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">风险值</label>
+                <div class="mws-form-item large">
+                    <input type="text" id='riskvalue' name='riskvalue'/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

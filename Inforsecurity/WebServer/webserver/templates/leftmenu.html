@@ -1,0 +1,98 @@
+    	<!-- Necessary markup, do not remove -->
+		<div id="mws-sidebar-stitch"></div>
+		<div id="mws-sidebar-bg"></div>
+        
+        <!-- Sidebar Wrapper -->
+        <div id="mws-sidebar">
+        
+
+            <!-- Main Navigation -->
+            <div id="mws-navigation">
+                <ul>
+
+                    {% if user.is_superuser %}
+
+                    <li>
+                        <a href="dashboard.html#"><i class="icon-list"></i> 结果展示</a>
+                        <ul>
+                            <li class="active"><a href="/">主页</a></li>
+                            <li class="active"><a href="/statistic/email">邮件记录统计</a></li>
+                            <li><a href="/statistic/ip">ip记录统计</a></li>
+                            <li><a href="/statistic/url">url记录统计</a></li>
+                            <!-- <li><a href="/statistic/ip">木马记录统计</a></li> -->
+
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="dashboard.html#"><i class="icon-list"></i> 移动结果展示</a>
+                        <ul>
+                            <li class="active"><a href="/user_statistic/driver">驱动事件统计</a></li>
+                            <li><a href="/user_statistic/net">网络事件统计</a></li>
+                            <li><a href="/user_statistic/driver_compare">驱动事件统计比对</a></li>
+                            <li><a href="/user_statistic/net_compare">网络事件统计比对</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="dashboard.html#"><i class="icon-list"></i> 黑名单管理</a>
+                        <ul>
+                            <li><a href="/management/blackemail">收件人黑名单管理</a></li>
+                            <li><a href="/management/blackIP">IP黑名单管理</a></li>
+                            <li><a href="/management/blackURL">URL黑名单管理</a></li>
+                            <!-- <li><a href="form_wizard.html">木马特征库管理</a></li> -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="dashboard.html#"><i class="icon-list"></i> 系统管理</a>
+                        <ul>
+                            <li><a href="/sysmanage/get_register">注册管理</a></li>
+                            <li><a href="/sysmanage/get_user">用户管理</a></li>
+                            <li><a href="/systemmanage/job_manage/">职业管理</a></li>
+                            <li><a href="/systemmanage/process_manage/">进程白名单管理</a></li>
+                            <!-- <li><a href="/systemmanage/client_download/">客户端下载</a></li> -->
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="dashboard.html#"><i class="icon-list"></i> 主要信息</a>
+                        <ul>
+                            <li class="active"><a href="/">主页</a></li>
+                            <li><a href="/dashboard/general">风险值查看</a></li>
+                            <li><a href="/dashboard/general_detail">详细信息</a></li>
+                            <li class="active"><a href="/alarmlist/get_user_alarmpre">预警结果</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="dashboard.html#"><i class="icon-list"></i> 机器结果展示</a>
+                        <ul>
+                            <li class="active"><a href="/user_statistic/email">邮件记录统计</a></li>
+                            <li><a href="/user_statistic/ip">ip记录统计</a></li>
+                            <li><a href="/user_statistic/url">url记录统计</a></li>
+<!--                            <li><a href="/user_statistic/ip">木马记录统计</a></li>-->
+                            <!-- <li><a href="form_wizard.html">可疑访问记录查看</a></li> -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="dashboard.html#"><i class="icon-list"></i> 移动结果展示</a>
+                        <ul>
+                            <li class="active"><a href="/user_statistic/driver">驱动事件统计</a></li>
+                            <li><a href="/user_statistic/net">网络事件统计</a></li>
+                            <li><a href="/user_statistic/driver_compare">驱动事件统计比对</a></li>
+                            <li><a href="/user_statistic/net_compare">网络事件统计比对</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="dashboard.html#"><i class="icon-list"></i> 系统配置</a>
+                        <ul>
+                            <li><a href="/usersettings/risk_manage/">风险值管理</a></li>
+                            <li><a href="/usersettings/white_email/">邮件白名单管理</a></li>
+                            <li><a href="/usersettings/white_ip/">IP白名单管理</a></li>
+                            <li><a href="/usersettings/white_url/">URL白名单管理</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>         
+        </div>
+        

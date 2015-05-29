@@ -1,0 +1,42 @@
+<div id="blackurl_search_dialog">
+<form id="blackurl_search" method="post" class="mws-form" action='/management/blackurl_search/'>
+    {% csrf_token %}
+        <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
+        <div class="mws-form-inline">
+            <div class="mws-form-row">
+                <label class="mws-form-label">URL类型</label>
+                <div class="mws-form-item large">
+                    <div id='blackurl_type'>
+                        {% for id,value,text in urltypes %}
+                        <input type="checkbox" name='blackurltype' value="{{value}}" id="{{id}}" /><label for="{{id}}">{{text}}</label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">开始日期</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='begintime' id='begintime' readonly="readonly"  class="mws-datepicker" />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">结束日期</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='endtime' id='endtime' readonly="readonly"  class="mws-datepicker" />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">风险值</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='riskvalue' id='riskvalue' />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">URL地址</label>
+                <div class="mws-form-item large">
+                    <input type="text" id='blackurl' name='blackurl' />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

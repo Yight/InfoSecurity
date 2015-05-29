@@ -1,0 +1,39 @@
+<div id="whiteProcess_search_dialog">
+<form id="whiteProcess_search" method="post" class="mws-form" action='/systemmanage/whiteprocess_search/'>
+    {% csrf_token %}
+        <div id="mws-validate-error" class="mws-form-message error" style="display:none;"></div>
+        <div class="mws-form-inline">
+            <div class="mws-form-row">
+                <label class="mws-form-label">进程名</label>
+                <div class="mws-form-item large">
+                    <input type="text" id='processname' name='processname' />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">开始日期</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='begintime' id='begintime' readonly="readonly"  class="mws-datepicker" />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">结束日期</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='endtime' id='endtime' readonly="readonly"  class="mws-datepicker" />
+                </div>
+            </div>
+
+            <div class="mws-form-row">
+                <label class="mws-form-label">进程MD5</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='md5' id='md5'/>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">版本</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='version' id='version'/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

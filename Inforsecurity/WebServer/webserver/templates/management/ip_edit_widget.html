@@ -1,0 +1,36 @@
+<div id="blackIp_edit_dialog">
+<form id="blackIp_edit"  class="mws-form" >
+    {% csrf_token %}
+        <div id="edit-blackIp-error" class="mws-form-message error" style="display:none;"></div>
+        <div class="mws-form-inline">
+            <div class="mws-form-row">
+                <label class="mws-form-label">邮件类型</label>
+                <div class="mws-form-item large">
+                    <div id='blackIp_type_edit'>
+                        {% for id,value,text in iptypes %}
+                        <input type="radio" name='blackiptype' value="{{value}}" id="edit{{id}}" /><label for="edit{{id}}">{{text}}</label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">邮件地址</label>
+                <div class="mws-form-item large">
+                    <input type="text" id='edit_blackIp' name='blackip' />
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">风险值</label>
+                <div class="mws-form-item large">
+                    <input type="text" name='riskvalue' id='editriskvalue'/>
+                </div>
+            </div>
+            <div class="mws-form-row">
+                <label class="mws-form-label">详细描述</label>
+                <div class="mws-form-item large">
+                    <textarea id='editdescription' name='description' rows="100%" cols="100%"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
